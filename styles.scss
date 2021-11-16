@@ -1,3 +1,6 @@
+$bkg-color: rgb(46, 47, 51);
+$lava-color: rgb(164, 197, 94);
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +10,7 @@
 section {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(#2e2f33, black);
+  background: radial-gradient($bkg-color, black);
 }
 
 .isometric {
@@ -16,27 +19,28 @@ section {
   left: 50%;
   width: 500px;
   height: 500px;
-  background: url("https://i.ibb.co/QnVsxFq/logo-platzi.jpg");
+  background: url('https://i.ibb.co/QnVsxFq/logo-platzi.jpg');
   background-size: cover;
   transform: translate(-50%, -50%) rotateX(45deg) rotateZ(-45deg);
   transform-style: preserve-3d;
   transition: 0.5s;
   animation: animate 2s linear infinite;
+
 }
 
 .isometric:hover {
   transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
-  box-shadow: 0px 20px 20px rgba(46, 47, 51, 0.5);
+  box-shadow: 0px 20px 20px rgba($bkg-color,0.5);
 }
 
 .isometric::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -50px;
   height: 50px;
   width: 100%;
-  background: linear-gradient(#2e2f33, #a4c55e);
+  background: linear-gradient($bkg-color, $lava-color);
   transform-origin: top;
   transform: skewX(-45deg) scaleY(1);
   transition: 0.5s;
@@ -47,16 +51,16 @@ section {
 }
 
 .isometric::after {
-  content: "";
+  content: '';
   position: absolute;
   left: -50px;
   top: 50px;
   width: 50px;
   height: 100%;
-  background: linear-gradient(to left, #2e2f33, #a4c55e);
+  background: linear-gradient(to left, $bkg-color, $lava-color);
   transform-origin: left;
   transform: skewY(-45deg) scaleX(1);
-  transition: 0.5s;
+  transition: 0.5s;  
 }
 
 .isometric:hover:after {
@@ -65,23 +69,22 @@ section {
 
 @keyframes animate {
   0% {
-    box-shadow: -50px 50px 80px rgba(46, 47, 51, 0.8), -80px 80px 250px #a4c55e;
+    box-shadow: -50px 50px 80px rgba($bkg-color,0.8), -80px 80px 250px $lava-color;
   }
   20% {
-    box-shadow: -50px 50px 80px rgba(46, 47, 51, 0.8), -80px 80px 150px #a4c55e;
+    box-shadow: -50px 50px 80px rgba($bkg-color,0.8), -80px 80px 150px $lava-color;
   }
   40% {
-    box-shadow: -50px 50px 80px rgba(46, 47, 51, 0.8), -80px 80px 200px #a4c55e;
+    box-shadow: -50px 50px 80px rgba($bkg-color,0.8), -80px 80px 200px $lava-color;
   }
   60% {
-    box-shadow: -50px 50px 80px rgba(46, 47, 51, 0.8), -80px 80px 120px #a4c55e;
+    box-shadow: -50px 50px 80px rgba($bkg-color,0.8), -80px 80px 120px $lava-color;
   }
   80% {
-    box-shadow: -50px 50px 80px rgba(46, 47, 51, 0.8), -80px 80px 190px #a4c55e;
+    box-shadow: -50px 50px 80px rgba($bkg-color,0.8), -80px 80px 190px $lava-color;
   }
   100% {
-    box-shadow: -50px 50px 80px rgba(46, 47, 51, 0.8), -80px 80px 250px #a4c55e;
+    box-shadow: -50px 50px 80px rgba($bkg-color,0.8), -80px 80px 250px $lava-color;
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
